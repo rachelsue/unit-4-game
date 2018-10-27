@@ -1,0 +1,59 @@
+body {
+    background-image: url(../images/bg1.jpg);
+    width: 100%;
+}
+
+.title {
+    color:plum;
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
+}
+
+.content {
+    color:whitesmoke;
+    width:100%;
+    background-color:#20DCB7;
+    padding:1%;
+    margin:1%;
+}
+
+#randomNum {
+    color:#20DCB7;
+    font-size:60px;
+    text-shadow: -1px 0 plum, 0 1px plum, 1px 0 plum, 0 -1px plum;
+}
+
+#w {
+    color:plum;
+    margin:1%;
+    padding:1%;
+    margin-top:15%;
+}
+
+#wins {
+    color:whitesmoke;
+}
+
+#l {
+    color:whitesmoke;
+    margin:1%;
+    padding:1%;
+}
+
+#losses {
+    color:plum;
+}
+
+#t {
+    color:whitesmoke;
+}
+
+#totalScore {
+    color:whitesmoke;
+    font-size:60px;
+    text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;   
+}
+
+img {
+    
+    margin:1%;
+}

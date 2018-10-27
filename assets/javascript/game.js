@@ -1,27 +1,77 @@
 var crystalNum =[]
-var crystalNum1 = Math.floor(Math.random() * 12) + 1;
-var crystalNum2 = Math.floor(Math.random() * 12) + 1;
-var crystalNum3 = Math.floor(Math.random() * 12) + 1;
-var crystalNum4 = Math.floor(Math.random() * 12) + 1;
+var crystal1 = Math.floor(Math.random() * 12) + 1;
+var crystal2 = Math.floor(Math.random() * 12) + 1;
+var crystal3 = Math.floor(Math.random() * 12) + 1;
+var crystal4 = Math.floor(Math.random() * 12) + 1;
 var randomNum = Math.floor(Math.random() * (120-19)) + 19;
-var wins = 0;
-var losses = 0;
+var wins = " "+ 0;
+var losses = " "+ 0;
 var totalScore = 0;
 
 $("#wins").text(wins);
 $("#losses").text(losses);
 
-$(document).ready(function() {
-    $("#randomNum").text(randomNum)
+
+function crystalGen() {
+    crystal1 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
+    crystal2 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
+    crystal3 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
+    crystal4 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
+}
+
+function numGen() {
+    randomNum = Math.floor(Math.random() * (120 - 19) + 19);
+    $("#randomNum").text(randomNum);
+}
+
+$("#crystal1").on("click", function(){
+    totalScore += crystal1;
+    $("#totalScore").text(totalScore);
+    reset()
 });
 
+$("#crystal2").on("click", function(){
+    totalScore += crystal2;
+    $("#totalScore").text(totalScore);
+    reset()
+});
 
+$("#crystal3").on("click", function(){
+    totalScore += crystal3;
+    $("#totalScore").text(totalScore);
+    reset()
+});
 
+$("#crystal4").on("click", function(){
+    totalScore += crystal4;
+    $("#totalScore").text(totalScore);
+    reset()
+});
 
-// for(var i = 1; i <= 12; i++){
-//     crystalArray.push(i);
-// }
-console.log(crystalNum1);
-console.log(crystalNum2);
+function reset(){
 
-console.log(randomNumArray);
+	if (totalScore === randomNum){
+        wins++;
+        totalScore = 0;
+        $("#wins").text(" "+ wins);
+        $("#totalScore").text(totalScore)
+        alert("You win!");
+        crystalGen();
+        numGen(); 
+    }  
+    else if (totalScore > randomNum){  
+        losses++; 
+        currentScore = 0;
+        $("#losses").text(" "+ losses); 
+        alert("You lose!");
+        $("#totalScore").text(totalScore);
+        crystalGen(); 
+        numGen(); 
+	}
+}
+
+console.log(crystal1);
+console.log(crystal2);
+console.log(crystal3);
+console.log(crystal4);
+console.log(randomNum);
