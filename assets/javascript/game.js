@@ -4,8 +4,8 @@ var crystal2 = Math.floor(Math.random() * 12) + 1;
 var crystal3 = Math.floor(Math.random() * 12) + 1;
 var crystal4 = Math.floor(Math.random() * 12) + 1;
 var randomNum = Math.floor(Math.random() * (120-19)) + 19;
-var wins = " "+ 0;
-var losses = " "+ 0;
+var wins = 0;
+var losses = 0;
 var totalScore = 0;
 
 $("#wins").text(wins);
@@ -53,20 +53,22 @@ function reset(){
 	if (totalScore === randomNum){
         wins++;
         totalScore = 0;
-        $("#wins").text(" "+ wins);
+        $("#wins").text(wins);
         $("#totalScore").text(totalScore)
         alert("You win!");
         crystalGen();
         numGen(); 
+        
     }  
-    else if (totalScore > randomNum){  
+    if (totalScore > randomNum){  
         losses++; 
-        currentScore = 0;
-        $("#losses").text(" "+ losses); 
-        alert("You lose!");
+        totalScore = 0;
+        $("#losses").text(losses); 
         $("#totalScore").text(totalScore);
+        alert("You LOSE!");
         crystalGen(); 
         numGen(); 
+        
 	}
 }
 
